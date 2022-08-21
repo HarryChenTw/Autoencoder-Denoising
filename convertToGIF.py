@@ -4,8 +4,8 @@ import os
 import re
 
 parser = argparse.ArgumentParser()
-parser.add_argument('image_dir', type=str, help='to-be-convert image folder')
-parser.add_argument('gif_name', type=str, help='target gif path')
+parser.add_argument('--image_dir', type=str, required=True, help='to-be-convert image folder')
+parser.add_argument('--gif_name', type=str, required=True, help='target gif path')
 opt = parser.parse_args()
 
 
