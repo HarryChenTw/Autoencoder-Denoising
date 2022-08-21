@@ -131,8 +131,6 @@ def train(opt, device):
 if __name__ == '__main__':
     # parse script options
     parser = argparse.ArgumentParser()
-    parser.add_argument('--train_data', type=str, default='test_image/train', help='image data folder for training')
-    parser.add_argument('--val_data', type=str, default='test_image/val', help='image data folder for validation')
     parser.add_argument('--epochs', type=int, default=100, help='num of epochs')
     parser.add_argument('--batch_size', type=int, default=8, help='total batch size')
     parser.add_argument('--lr', type=float, default=1e-4, help='learning rate')
