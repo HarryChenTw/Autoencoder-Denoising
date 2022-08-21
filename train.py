@@ -91,15 +91,15 @@ def train(opt, device):
             train_desc = f'Epoch [{epoch}/{opt.epochs}], Loss: {train_loss/(i+1):.4f}'
             pbar.set_description(desc = train_desc)
 
-            # stores intermediate image (every 10 iters)
-            if (opt.s) & ((epoch * len(pbar) + i) % 10 == 0):
-                first_image = val_dataset.get_first_image(noise=True,ret_tensor=True)
-                first_image = torch.reshape(first_image, (1,*first_image.shape)).to(device,dtype=torch.float)
-                outputs = model(first_image)[0].cpu().detach().numpy().reshape(*image_size) * 255
-                outputs = np.clip(outputs.round(), 0, 255)
-                intermediate_image_dir = f'log/{log_name}/intermediate_image'
-                if not os.path.exists(intermediate_image_dir) : os.mkdir(intermediate_image_dir)
-                cv2.imwrite(f'{intermediate_image_dir}/epoch_{epoch}_iter_{i}.png', outputs)
+        # stores intermediate image (every 1 epoch)
+        if opt.s:
+            first_image = val_dataset.get_first_image(noise=True,ret_tensor=True)
+            first_image = torch.reshape(first_image, (1,*first_image.shape)).to(device,dtype=torch.float)
+            outputs = model(first_image)[0].cpu().detach().numpy().reshape(*image_size) * 255
+            outputs = np.clip(outputs.round(), 0, 255)
+            intermediate_image_dir = f'log/{log_name}/intermediate_image'
+            if not os.path.exists(intermediate_image_dir) : os.mkdir(intermediate_image_dir)
+            cv2.imwrite(f'{intermediate_image_dir}/epoch_{epoch}.png', outputs)
         log.write(f'{train_desc}')
 
         # validation
@@ -134,7 +134,7 @@ if __name__ == '__main__':
     parser.add_argument('--epochs', type=int, default=100, help='num of epochs')
     parser.add_argument('--batch_size', type=int, default=8, help='total batch size')
     parser.add_argument('--lr', type=float, default=1e-4, help='learning rate')
-    parser.add_argument('--s', action="store_true", default=False, help='store result image of the 1st val image in training')
+    parser.add_argument('--s', action="store_true", default=False, help='store result image of the 1st val image in every epoch')
     opt = parser.parse_args()
 
     # device
