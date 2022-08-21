@@ -14,7 +14,7 @@ from torchsummary import summary
 
 from utils.dataset import mnistDataset
 from model.autoencoder import autoencoder
-from utils.image import gaussian_noice
+from utils.image import gaussian_noise
 
 def train(opt, device):
 
@@ -34,8 +34,8 @@ def train(opt, device):
     log.write(f'validation size : {len(val_normal_images)}\n')
     train_normal_images = train_normal_images / 255
     val_normal_images = val_normal_images / 255
-    train_noisy_images = [gaussian_noice(normal_image,0.3) for normal_image in train_normal_images]
-    val_noisy_images = [gaussian_noice(normal_image,0.3) for normal_image in val_normal_images]
+    train_noisy_images = [gaussian_noise(normal_image,0.3) for normal_image in train_normal_images]
+    val_noisy_images = [gaussian_noise(normal_image,0.3) for normal_image in val_normal_images]
     
     train_dataset = mnistDataset(train_normal_images, train_noisy_images)
     train_loader = DataLoader(

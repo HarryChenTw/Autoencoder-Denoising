@@ -7,8 +7,6 @@ class mnistDataset(Dataset):
         self.noisy_images = noisy_images
 
     def __getitem__(self, index):
-        # img = self.images[index] / 255
-        # noisy_image = gaussian_noice(img,proportion=0.3)
         noisy_image = self.noisy_images[index]
         normal_image = self.normal_images[index]
         return torch.tensor(noisy_image.reshape(*noisy_image.shape,1)), torch.tensor(normal_image.reshape(*normal_image.shape,1))
