@@ -2,19 +2,44 @@ import torch
 from torch import nn
 
 class autoencoder(nn.Module):
-    def __init__(self, input_size):
+    def __init__(self):
         super().__init__()
-        self.input_size = input_size
-
         self.encoder = nn.Sequential(
-            nn.Conv2d(in_channels=1,out_channels=16,kernel_size=(2,2),stride=(2,2),padding=0),
-            nn.Conv2d(in_channels=16,out_channels=32,kernel_size=(2,2),stride=(2,2)),
-            nn.Conv2d(in_channels=32,out_channels=64,kernel_size=(2,2),stride=(2,2)),
+            nn.Conv2d(in_channels=1,out_channels=128,kernel_size=(2,2),padding='same'),
+            nn.ReLU(),
+            nn.BatchNorm2d(num_features=128),
+            nn.Conv2d(in_channels=128,out_channels=128,kernel_size=(2,2),stride=(2,2)),
+            nn.ReLU(),
+            nn.BatchNorm2d(num_features=128),
+            nn.Conv2d(in_channels=128,out_channels=128,kernel_size=(2,2),padding='same'),
+            nn.ReLU(),
+            nn.BatchNorm2d(num_features=128),
+            nn.Conv2d(in_channels=128,out_channels=128,kernel_size=(2,2),stride=(2,2)),
+            nn.ReLU(),
+            nn.BatchNorm2d(num_features=128),
+            nn.Conv2d(in_channels=128,out_channels=512,kernel_size=(2,2),padding='same'),
+            nn.ReLU(),
         )
         self.decoder = nn.Sequential(
-            nn.ConvTranspose2d(in_channels=64,out_channels=32,kernel_size=(2,2),stride=(2,2)),
-            nn.ConvTranspose2d(in_channels=32,out_channels=16,kernel_size=(2,2),stride=(2,2)),
-            nn.ConvTranspose2d(in_channels=16,out_channels=1,kernel_size=(2,2),stride=(2,2)),
+            nn.ConvTranspose2d(in_channels=512,out_channels=512,kernel_size=(2,2),stride=(2,2)),
+            nn.ReLU(),
+            nn.BatchNorm2d(num_features=512),
+            nn.Conv2d(in_channels=512,out_channels=256,kernel_size=(2,2),padding='same'),
+            nn.ReLU(),
+            nn.BatchNorm2d(num_features=256),
+            nn.Conv2d(in_channels=256,out_channels=256,kernel_size=(2,2),padding='same'),
+            nn.ReLU(),
+            nn.BatchNorm2d(num_features=256),
+            nn.Conv2d(in_channels=256,out_channels=128,kernel_size=(2,2),padding='same'),
+            nn.ReLU(),
+            nn.BatchNorm2d(num_features=128),
+            nn.ConvTranspose2d(in_channels=128,out_channels=128,kernel_size=(2,2),stride=(2,2)),
+            nn.ReLU(),
+            nn.Conv2d(in_channels=128,out_channels=64,kernel_size=(2,2),padding='same'),
+            nn.ReLU(),
+            nn.BatchNorm2d(num_features=64),
+            nn.Conv2d(in_channels=64,out_channels=1,kernel_size=(2,2),padding='same'),
+            nn.ReLU()
         )
 
     def forward(self, input):
@@ -23,7 +48,6 @@ class autoencoder(nn.Module):
         # conv2d input : [batch, channel, img_height, img_weight]
         input = torch.transpose(input,1,3)
         input = torch.transpose(input,2,3)
-        
         compressed = self.encoder(input)
         output = self.decoder(compressed)
         

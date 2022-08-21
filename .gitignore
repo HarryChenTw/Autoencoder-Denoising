@@ -1,5 +1,4 @@
-xray_image/
-test_image/
 __pycache__/
 .DS_Store
 execute.ipynb
+intermediate_image/
