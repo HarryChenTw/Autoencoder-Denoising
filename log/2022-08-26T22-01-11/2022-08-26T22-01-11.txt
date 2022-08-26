@@ -1,0 +1,22 @@
+training size : 60000
+validation size : 10000
+Epoch [1/20], Loss: 0.0694, Val Loss: 0.070385
+Epoch [2/20], Loss: 0.0773, Val Loss: 0.090862
+Epoch [3/20], Loss: 0.0711, Val Loss: 0.075820
+Epoch [4/20], Loss: 0.0601, Val Loss: 0.051642
+Epoch [5/20], Loss: 0.0451, Val Loss: 0.041771
+Epoch [6/20], Loss: 0.0411, Val Loss: 0.045160
+Epoch [7/20], Loss: 0.0426, Val Loss: 0.041689
+Epoch [8/20], Loss: 0.0428, Val Loss: 0.039040
+Epoch [9/20], Loss: 0.0377, Val Loss: 0.035732
+Epoch [10/20], Loss: 0.0367, Val Loss: 0.045652
+Epoch [11/20], Loss: 0.0464, Val Loss: 0.048530
+Epoch [12/20], Loss: 0.0411, Val Loss: 0.036790
+Epoch [13/20], Loss: 0.0339, Val Loss: 0.035776
+Epoch [14/20], Loss: 0.0359, Val Loss: 0.039803
+Epoch [15/20], Loss: 0.0374, Val Loss: 0.034839
+Epoch [16/20], Loss: 0.0293, Val Loss: 0.027793
+Epoch [17/20], Loss: 0.0260, Val Loss: 0.024666
+Epoch [18/20], Loss: 0.0227, Val Loss: 0.024434
+Epoch [19/20], Loss: 0.0232, Val Loss: 0.030002
+Epoch [20/20], Loss: 0.0317, Val Loss: 0.030939

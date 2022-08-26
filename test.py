@@ -4,7 +4,7 @@ import cv2
 
 import torch
 
-from model.autoencoder import autoencoder
+from model.autoencoder import AutoEncoder
 from utils.image import gaussian_noise
 
 def test(opt,device):
@@ -17,7 +17,7 @@ def test(opt,device):
     cv2.imwrite(f'{opt.output_dir}/noisy_image.png', np.clip(noisy_image * 255,0,255))
 
     # restore model
-    model = autoencoder().to(device)
+    model = AutoEncoder().to(device)
     ckpt = torch.load(opt.model, map_location=device)
     model.load_state_dict(ckpt['model'])
     

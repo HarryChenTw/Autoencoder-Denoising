@@ -13,7 +13,7 @@ import torch.optim as optim
 from torchsummary import summary
 
 from utils.dataset import mnistDataset
-from model.autoencoder import autoencoder
+from model.autoencoder import AutoEncoder
 from utils.image import gaussian_noise
 
 def train(opt, device):
@@ -50,7 +50,7 @@ def train(opt, device):
 
     
     # define model and loss
-    model = autoencoder().to(device)
+    model = AutoEncoder().to(device)
     criterion = nn.MSELoss()
     optimizer = optim.Adam(model.parameters(), lr=opt.lr)
 
@@ -64,8 +64,8 @@ def train(opt, device):
         if not os.path.exists(intermediate_image_dir) : os.mkdir(intermediate_image_dir)
         normal_first_image = np.clip(val_dataset.get_first_image(noise=True,ret_tensor=False)*255, 0, 255)
         noisy_first_image = np.clip(val_dataset.get_first_image(noise=False,ret_tensor=False)*255, 0, 255)
-        cv2.imwrite(f'{intermediate_image_dir}/noisy_image.png', normal_first_image)
-        cv2.imwrite(f'{intermediate_image_dir}/normal_image.png', noisy_first_image)
+        cv2.imwrite(f'log/{log_name}/noisy_image.png', normal_first_image)
+        cv2.imwrite(f'log/{log_name}/normal_image.png', noisy_first_image)
 
     # training loop 
     for epoch in range(1, opt.epochs+1):
