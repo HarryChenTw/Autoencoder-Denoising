@@ -1,0 +1,32 @@
+training size : 60000
+validation size : 10000
+Epoch [1/30], Loss: 0.0726, Val Loss: 0.045852
+Epoch [2/30], Loss: 0.0578, Val Loss: 0.096886
+Epoch [3/30], Loss: 0.0768, Val Loss: 0.088465
+Epoch [4/30], Loss: 0.0608, Val Loss: 0.066993
+Epoch [5/30], Loss: 0.0603, Val Loss: 0.068555
+Epoch [6/30], Loss: 0.0548, Val Loss: 0.066702
+Epoch [7/30], Loss: 0.0554, Val Loss: 0.049901
+Epoch [8/30], Loss: 0.0470, Val Loss: 0.041220
+Epoch [9/30], Loss: 0.0405, Val Loss: 0.039839
+Epoch [10/30], Loss: 0.0395, Val Loss: 0.047223
+Epoch [11/30], Loss: 0.0434, Val Loss: 0.052193
+Epoch [12/30], Loss: 0.0466, Val Loss: 0.038760
+Epoch [13/30], Loss: 0.0369, Val Loss: 0.036016
+Epoch [14/30], Loss: 0.0347, Val Loss: 0.036497
+Epoch [15/30], Loss: 0.0326, Val Loss: 0.037597
+Epoch [16/30], Loss: 0.0339, Val Loss: 0.033102
+Epoch [17/30], Loss: 0.0331, Val Loss: 0.030043
+Epoch [18/30], Loss: 0.0279, Val Loss: 0.028879
+Epoch [19/30], Loss: 0.0280, Val Loss: 0.033564
+Epoch [20/30], Loss: 0.0309, Val Loss: 0.027853
+Epoch [21/30], Loss: 0.0275, Val Loss: 0.025472
+Epoch [22/30], Loss: 0.0237, Val Loss: 0.025703
+Epoch [23/30], Loss: 0.0238, Val Loss: 0.026972
+Epoch [24/30], Loss: 0.0258, Val Loss: 0.027955
+Epoch [25/30], Loss: 0.0268, Val Loss: 0.029492
+Epoch [26/30], Loss: 0.0303, Val Loss: 0.027923
+Epoch [27/30], Loss: 0.0246, Val Loss: 0.025269
+Epoch [28/30], Loss: 0.0229, Val Loss: 0.023567
+Epoch [29/30], Loss: 0.0217, Val Loss: 0.023434
+Epoch [30/30], Loss: 0.0219, Val Loss: 0.020019
