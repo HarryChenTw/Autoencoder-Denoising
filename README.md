@@ -1,4 +1,12 @@
 An pytorch implementation of autoencoder model for denosing hand-written number images.
+## Result
+normal image  |  noisy image  |  denoised image
+
+<img src="https://user-images.githubusercontent.com/75982405/185782699-930a7d0e-3112-453d-82ca-b1873681d6f4.png" width="100" height="100">   <img src="https://user-images.githubusercontent.com/75982405/185782702-6759f4ce-a5f4-44cf-8d9e-3a1ed118a996.png" width="100" height="100">   <img src="https://user-images.githubusercontent.com/75982405/187011111-0e1cca12-e992-47f1-a2cf-22285dc6d435.png" width="100" height="100">
+ 
+during training 
+
+<img src="https://user-images.githubusercontent.com/75982405/187011089-b7ee120b-b2c5-4fab-a9d9-370f633cf409.gif" width="100" height="100"> 
 
 ## model structure
 
@@ -39,11 +47,6 @@ optional arguments:
 ```shell
 python convertToGIF.py --image_dir [ image dir from training ] --gif_name [ output GIF name ]
 ```
-e.g. <img src="https://user-images.githubusercontent.com/75982405/186931872-c23bf3cd-ba43-4352-a69d-7884179a1208.gif" width="100" height="100"> 
+e.g. <img src="https://user-images.githubusercontent.com/75982405/187011089-b7ee120b-b2c5-4fab-a9d9-370f633cf409.gif" width="100" height="100"> 
 
-
-## Result
-normal image  |  noisy image  |  denoised image
-
-<img src="https://user-images.githubusercontent.com/75982405/185782699-930a7d0e-3112-453d-82ca-b1873681d6f4.png" width="100" height="100">.   <img src="https://user-images.githubusercontent.com/75982405/185782702-6759f4ce-a5f4-44cf-8d9e-3a1ed118a996.png" width="100" height="100">.   <img src="https://user-images.githubusercontent.com/75982405/186931831-b1903cc8-1d02-4384-a712-12e47f82c738.png" width="100" height="100">
 
