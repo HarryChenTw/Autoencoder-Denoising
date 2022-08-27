@@ -12,7 +12,7 @@ during training
 
 <img width="450" alt="Screen Shot 2022-08-26 at 10 42 39 PM" src="https://user-images.githubusercontent.com/75982405/186931637-73a16ba1-e114-4ef9-968f-0980203b208d.png">
 
-- pre-trained weights is in `log/2022-08-26T22-01-11/2022-08-26T22-01-11_weights.pt`
+- pre-trained weights is in `log/2022-08-27T10-02-47/2022-08-27T10-02-47_weights.pt`
 
 ## Usage
 #### denoise one image
