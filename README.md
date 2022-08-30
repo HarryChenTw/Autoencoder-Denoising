@@ -16,7 +16,7 @@ during training
 
 ## Usage
 #### denoise one image
-```shell
+```
 python test.py --image_path [ image path ] --model [ model weights path ]
 
 optional arguments:
@@ -27,7 +27,7 @@ optional arguments:
 ```
 
 #### train
-```shell
+```
 python train.py 
 
 optional arguments:
@@ -44,7 +44,7 @@ optional arguments:
   3. model weights (.pt) after all training is done
   
 #### make GIF of intermediate results
-```shell
+```
 python convertToGIF.py --image_dir [ image dir from training ] --gif_name [ output GIF name ]
 ```
 e.g. <img src="https://user-images.githubusercontent.com/75982405/187011089-b7ee120b-b2c5-4fab-a9d9-370f633cf409.gif" width="100" height="100"> 
